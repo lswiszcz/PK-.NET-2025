@@ -9,6 +9,7 @@ Dodatkowo studenci powinni napisać testy jednostkowe przy użyciu **frameworka 
    - Aplikacja powinna umożliwiać użytkownikowi wybór źródła danych:  
      a) Wprowadzenie tekstu ręcznie w konsoli.  
      b) Wczytanie tekstu z pliku (ścieżka do pliku podana przez użytkownika).  
+     c) Podanie lokalizacji pliku jako argument wiersza polecień
 
 2. **Obliczanie statystyk**  
    - Aplikacja powinna obliczać następujące statystyki dla podanego tekstu:  
