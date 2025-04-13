@@ -42,7 +42,7 @@ Projekt powinien mieć przejrzystą strukturę, modularność, oraz używać now
 
 ---
 
-## ✅ **Wymagania dodatkowe**
+## ✅ **Pozostałe wymagania**
 
 ### 🧩 **1. Indeksy – optymalizacja zapytań**
 
