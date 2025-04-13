@@ -42,6 +42,83 @@ Projekt powinien mieć przejrzystą strukturę, modularność, oraz używać now
 
 ---
 
+## ✅ **Wymagania dodatkowe**
+
+### 🧩 **1. Indeksy – optymalizacja zapytań**
+
+#### 📌 Zadanie:
+- Zidentyfikuj **co najmniej dwa zapytania SELECT**, które są często wykonywane i mają **WHERE** lub **JOIN** po kolumnie niekluczowej.
+- Dodaj **indeksy nieklastrowane (non-clustered)** do wybranych kolumn.
+- Zrób analizę wydajności:
+  - **Zrzut planu zapytania (Query Plan)** przed i po dodaniu indeksu.
+  - Krótkie porównanie (np. liczba odczytów, operacje przeszukiwania vs seek).
+  - Umieść to w **raporcie PDF** z opisem + screenshotami.
+
+#### 📎 Plik: `raport-indeksy.pdf`
+
+---
+
+### 📡 **2. SQL Profiler – nasłuch endpointu**
+
+#### 📌 Zadanie:
+- Uruchom **SQL Server Profiler (lub EF Core Logging)**.
+- Wybierz konkretny **endpoint API**.
+- Uruchom aplikację → wywołaj endpoint → zrób screenshot z Profilerem pokazującym zapytanie.
+- Dodaj screenshoty + opis działania zapytania + krótki komentarz.
+
+#### 📎 Plik: `raport-sql-profiler.pdf`
+
+---
+
+### ⚙️ **3. GitHub Actions – CI/CD**
+
+#### 📌 Zadanie:
+- Skonfiguruj workflow z następującymi krokami:
+  - build (`dotnet build`)
+  - test (`dotnet test`)
+  - opcjonalnie: build obrazu Docker
+  - opcjonalnie: push do DockerHub (wymaga tokenu)
+
+#### 📎 Plik: `README.md` → opis działania CI/CD  
+#### 📎 Plik: `dotnet-ci.yml` w repozytorium
+
+---
+
+### 📝 **4. Logowanie błędów – NLog**
+
+#### 📌 Zadanie:
+- Skonfiguruj **NLog** do logowania wyjątków i zdarzeń:
+  - logi zapisywane do pliku (np. `/logs/errors.log`)
+  - logowanie błędów kontrolerów i serwisów
+  - obsługa logowania przez DI (`ILogger<T>`)
+
+---
+
+### 📤 **5. BackgroundService – raport e-mail**
+
+#### 📌 Zadanie:
+- Zaimplementuj usługę w tle (`BackgroundService`), która:
+  - raz dziennie (lub co 1–2 minuty dla testów) generuje raport z aktualnych zleceń
+  - zapisuje go jako PDF (np. `open_orders.pdf`)
+  - wysyła jako załącznik na e-mail admina (np. za pomocą SMTP)
+
+#### 📎 Plik: `raport-otwarte-naprawy.pdf`  
+#### 📎 Klasa: `OpenOrderReportBackgroundService.cs`
+
+---
+
+### 🚀 **6. NBomber – testy wydajności**
+
+#### 📌 Zadanie:
+- Skonfiguruj **NBomber** do przetestowania wybranego endpointu, np. `GET /api/orders/active`
+- Uruchom test z 50 równoległymi użytkownikami, 100 żądaniami
+- Zapisz **raport PDF z wynikami testu**
+
+#### 📎 Plik: `nbomber-report.pdf`  
+#### 📎 Kod testu: np. `PerformanceTests/OrdersLoadTest.cs`
+
+---
+
 ## 🧱 **Modele danych (przykładowe)**
 
 ```csharp
