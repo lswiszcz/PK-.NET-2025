@@ -138,7 +138,7 @@ class Comment { Author, Content, Timestamp }
 | Obszar                  | Szczegóły                                                                 |
 |-------------------------|---------------------------------------------------------------------------|
 | **ASP.NET Core**        | Wersja 7 lub 8                                                            |
-| **EF Core**             | Code First + migracje, SQLite lub SQL Server                             |
+| **EF Core**             | Code First + migracje - SQL Server                             |
 | **Identity**            | Logowanie, role, autoryzacja                                              |
 | **Mapperly**            | Mapowanie DTO ↔️ encje np. Mapperly                                 |
 | **DI**                  | Serwisy biznesowe (`ICustomerService`, `IOrderService`, ...)              |
